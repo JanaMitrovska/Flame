@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Member } from '../_modules/member';
+
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
-
+import { Member } from '../_modules/member';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MembersService {
-  
   baseUrl = environment.apiUrl;
   members: Member[] = [];
 
