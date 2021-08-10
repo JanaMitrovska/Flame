@@ -1,7 +1,22 @@
 <div class="container">
     <div class="row">
-        <div *ngFor="let member of members$ | async" class="col-2">
+        <div *ngFor="let member of members" class="col-2">
             <app-member-card [member]="member"></app-member-card>
         </div>
     </div>
 </div>
+
+<!-- https://valor-software.com/ngx-bootstrap/#/pagination --->
+<div class="d-flex justify-content-center" style="position: absolute; bottom: 0; left: 0; right: 0;" *ngIf="pagination">
+    <div class="row">
+        <div class="col-xs-12 col-12">
+          <pagination 
+          [totalItems]="pagination.totalItems" 
+          [itemsPerPage]="pagination.itemsPerPage"
+          (pageChanged)="pageChanged($event)"
+          [(ngModel)]="pagination.currentPage"
+          ></pagination>
+        </div>
+      </div>
+</div>
+
