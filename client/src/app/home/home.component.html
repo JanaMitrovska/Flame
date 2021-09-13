@@ -1,18 +1,87 @@
-<div class="container mt-5">
-    <div *ngIf="!registerMode" style="text-align: center;">
-        <h1>Find your match</h1>
-        <p class="lead">Come on in to view your mathes... all you need to do is sign up</p>
-        <div class="text-center">
-            <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
-            <button class="btn btn-primary btn-lg">Learn more..</button>
-        </div>
-    </div>
+<div class="container">
+        <div *ngIf="!registerMode" style="text-align: center;">
+            <img src="./assets/love.jpg" alt="">
+            <div class="centered">
+                <h1>Find your match</h1>
+                <p class="lead">Join all the singles today!</p>
+                <div class="text-center">
+                    <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
+                    <button class="btn btn-primary btn-lg" routerLink='/about-us'>About Us</button>
+                </div>
+            </div>
 
-    <div *ngIf="registerMode" class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+
+
+            <section class="py-5 mt-3 border-bottom">
+                <div class="container px-5 my-5 px-5">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bolder">Customer testimonials</h2>
+                        <p class="lead mb-0">Our customers love working with us</p>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-4">
+                            <!-- Testimonial 1-->
+                            <div class="card mb-4">
+                                <div class="card-body p-4">
+                                    <img class="profile mb-3" src="./assets/user.png">
+                                    <div class="d-flex">
+                                        
+                                        <div class="flex-shrink-0"><i class="fa fa-quote-left text-primary fs-1"></i></div>
+                                        <div class="ms-4 mt-3">
+                                            <p class="mb-1">Forever greatfull for this website, I met the love of my life here 2 years ago. Don't waste any time, make a profile a start your journey today!</p>
+                                            <div class="small text-muted">- Sam, Skopje</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2-->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <img class="profile mb-3" src="./assets/user.png">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0"><i class="fa fa-quote-left text-primary fs-1"></i></div>
+                                        <div class="ms-4 mt-3">
+                                            <p class="mb-4">Great website, tons of amazing peaople!</p>
+                                            <div class="small text-muted">- Brad, Skopje</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3-->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body p-4">
+                                    <img class="profile mb-3" src="./assets/user.png">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0"><i class="fa fa-quote-left text-primary fs-1"></i></div>
+                                        <div class="ms-4 mt-3">
+                                            <p class="mb-1">Met a lot of amazing people here, still looking for the one but I wouldn't change any part of my experience.</p>
+                                            <div class="small text-muted">- Sara, Skopje</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+        <div *ngIf="registerMode" >
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+                </div>
             </div>
         </div>
-    </div>
+
+        <footer class="py-5 mt-3 bg-dark">
+            <div class="container px-4 mt-2 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Flame 2021</p></div>
+        </footer>
 </div>
+

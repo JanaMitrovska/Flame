@@ -10,10 +10,13 @@ export class HomeComponent implements OnInit {
 
   registerMode = false;
 
-  constructor() { }
-
+  constructor() {
+  }
+  
   ngOnInit(): void {
   }
+
+  images = ['./assets/1.jpg', './assets/2.jpg', './assets/3.jpg']
 
   registerToggle(){
     this.registerMode = !this.registerMode;

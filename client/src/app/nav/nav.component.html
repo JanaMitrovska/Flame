@@ -7,10 +7,10 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto" >
+      <li class="nav-item text-center">
+        <a class="navbar-brand" routerLink='/'>Flame</a>
+      </li>
       <ng-container *ngIf="accountService.currentUser$ | async">
-        <li class="nav-item text-center">
-          <a class="navbar-brand" routerLink='/'>Flame</a>
-        </li>
         <li class="nav-item ">
           <a class="nav-link" routerLink='/members' routerLinkActive='active'>Matches</a>
         </li>
@@ -20,20 +20,20 @@
         <li class="nav-item ">
           <a class="nav-link" routerLink='/messages' routerLinkActive='active'>Messages</a>
         </li>
+        <li *appHasRole='["Admin"]' class="nav-item ">
+          <a class="nav-link" routerLink='/admin' routerLinkActive='active'>Admin</a>
+        </li>
         <li class="nav-item ">
-          <a class="nav-link" href="#">About Us</a>
-        </li>   
-        
+          <a class="nav-link" routerLink='/about-us'>About Us</a>
+        </li> 
       </ng-container>   
-      <li class="nav-item ">
-        <a class="nav-link" routerLink='/errors' routerLinkActive='active'>Errors</a>
-      </li>
+
     </ul>
   </div>
 
   <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
     <img src="{{user.photoUrl || './assets/user.png'}}" alt="{{user.username}}">  
-    <a class="dropdown-toggle text-light ml-4" dropdownToggle>Welcome {{user.knownAs | titlecase}}</a>
+    <a class="dropdown-toggle text-light ml-4" dropdownToggle>Welcome {{user.knownAs || user.username | titlecase}}</a>
     <div class="dropdown-menu mt-3" *dropdownMenu>
       <a routerLink='/member/edit' class="dropdown-item">Edit Profile</a>
       <div class="dropdown-divider"></div>
