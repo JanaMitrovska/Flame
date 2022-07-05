@@ -32,6 +32,7 @@ import { UserManagementComponent } from './admin/user-management/user-management
 import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 import { RolesModalComponent } from './modals/roles-modal/roles-modal.component';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { AboutUsComponent } from './about-us/about-us/about-us.component';
     PhotoManagementComponent,
     RolesModalComponent,
     AboutUsComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,

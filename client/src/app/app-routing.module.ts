@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
@@ -11,6 +11,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
@@ -33,6 +34,7 @@ const routes: Routes = [
     ]
   },
   {path: 'about-us', component: AboutUsComponent},
+  {path: 'privacy-policy', component: PrivacyPolicyComponent},
   {path: 'errors', component: TestErrorsComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'server-error', component: ServerErrorComponent},
